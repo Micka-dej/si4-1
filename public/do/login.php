@@ -10,7 +10,7 @@
         $user = $stmt->fetch();
 
         if ($user) {
-
+            //
         }else{
             $_SESSION['advert'] = ['type' => 'error', 'message' => 'Identifiant ou mot de passe incorrects'];
             header('Location: index.php');
