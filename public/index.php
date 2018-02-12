@@ -2,7 +2,7 @@
 
 require_once '../app/config/system.php';
 
-require_once INCLUDES . '/header.php';
+require_once INCLUDES . '/default/header.php';
 
 ?>
 
@@ -12,6 +12,6 @@ require_once INCLUDES . '/header.php';
 
 <?php
 
-require_once INCLUDES . '/footer.php';
+require_once INCLUDES . '/default/footer.php';
 
 ?>
