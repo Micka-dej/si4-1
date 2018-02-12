@@ -19,8 +19,13 @@ define('DIR_ASSETS', WEBROOT . '/assets');
 define('DIR_APP', ROOT . '/app');
 define('DIR_CONFIG', DIR_APP . '/config');
 define('DIR_MODELS', ROOT . '/models');
+define('INCLUDES', ROOT . '/includes');
 
-$private_key = "1e23c8ed7e08abeb4fe3e5a3def219fc4d43ef3a130fe975be50f9a246711d97a4f91b90822b50f68fed0dc6a3ada3b8fc9fc6254ce01da0ad438ffa50d903ea";
+// Hash SHA-512 pour le hash de mots de passe
+$shield = [
+    'private_key' => "1e23c8ed7e08abeb4fe3e5a3def219fc4d43ef3a130fe975be50f9a246711d97a4f91b90822b50f68fed0dc6a3ada3b8fc9fc6254ce01da0ad438ffa50d903ea",
+    'salt' => '_kSl6aS1+'
+];
 
 // On inclus les infos de la BDD
 require ('db.php');
