@@ -2,7 +2,6 @@
     require_once '../app/config/system.php';
 ?>
 
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -38,13 +37,13 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">
+                        <a class="nav-link active" href="/admin.php">
                             <span data-feather="home"></span>
                             Dashboard
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/configuration.php">
                             <span data-feather="file"></span>
                             Configuration
                         </a>
@@ -59,25 +58,25 @@
                         <span>Gestion de contenu</span>
                     </h6>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="manage_filieres.php">
                             <span data-feather="git-branch"></span>
                             Filières
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="manage_matieres.php">
                             <span data-feather="folder"></span>
                             Matières
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="manage_promos.php">
                             <span data-feather="hash"></span>
                             Promotions
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="manage_students.php">
                             <span data-feather="users"></span>
                             Etudiants
                         </a>
@@ -128,10 +127,13 @@
                 <h4 class="alert-heading">Bienvenue, {user} !</h4>
                 <p>Dans cet espace d'administration, vous pourrez gérer le contenu de l'agenda collaboratif y compris le profil des étudiants, les publications ou encore les filières.</p>
                 <hr>
-                <p class="mb-0">Utilisez le menu latéral gauche pour naviguer entre les sections.</p>
+                <p class="mb-0">Il y a actuellement : <strong>142 étudiants</strong> dans <strong>5 filières</strong> pour <strong>6 promotions</strong>.</p>
             </div>
 
-            <a href="#" class="btn btn-primary">Gérer les filières</a>
+            <a href="#" class="btn btn-default">Gérer les filières</a>
+            <a href="#" class="btn btn-default">Gérer les matières</a>
+            <a href="#" class="btn btn-default">Gérer les promotions</a>
+            <a href="#" class="btn btn-default">Gérer les étudiants</a>
             <!--<div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
