@@ -7,3 +7,9 @@ $db = [
     'password' => '',
     'charset' => 'utf8'
 ];
+
+// Hash SHA-512 pour le hash de mots de passe
+$app_options = [
+    'private_key' => '',
+    'salt' => ''
+];

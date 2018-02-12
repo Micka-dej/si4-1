@@ -7,7 +7,7 @@ require_once INCLUDES . '/header.php';
 ?>
 
 <div class="container">
-    <p>ss</p>
+    <p>orgatic</p>
 </div>
 
 <?php
