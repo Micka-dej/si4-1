@@ -28,7 +28,7 @@
     
     <div class="account">
     <img src="<?= DIR_ASSETS; ?>/img/avatar.png" width="32" alt="">
-    <a href="#">Mon Compte</a>
+    <a href="#"><?= $_SESSION['username']; ?></a> <a href="logout.php?csrf=<?= $_SESSION['csrf']; ?>" style="font-size:13px;">Déconnexion</a>
     </div>
     <?php endif; ?>
 </header>

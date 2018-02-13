@@ -18,7 +18,7 @@
             if (!empty($_SESSION['advert'])) {
                 $class = ($_SESSION['advert']['type'] == 'error') ? 'danger' : 'success';
                 
-                echo '<div class="alert alert-'.$class.'" role="alert">' . $_SESSION['advert']['message'] . '</div>';
+                echo '<div class="alert alert-'.$class.'" role="alert">' . htmlentities($_SESSION['advert']['message']) . '</div>';
                 
                 $_SESSION['advert'] = [];
             }
@@ -41,7 +41,7 @@
                     <?php
                         foreach ($filieres as $fil) {
                             echo '<tr>';
-                            echo '<td><a href="edit_filiere.php?id='.$fil['id'].'">'.$fil['name'].'</a></td>';
+                            echo '<td><a href="edit_filiere.php?id='.$fil['id'].'">'.htmlentities($fil['name']).'</a></td>';
                             echo '<td>'.$fil['nb.promos'].'</td>';
                             echo '<td><a href="edit_filiere.php?id='.$fil['id'].'" class="btn btn-sm btn-primary">Modifier</a> <a href="delete_filiere.php?id='.$fil['id'].'" class="btn btn-sm btn-danger">Supprimer</a></td>';
                             echo '</tr>';

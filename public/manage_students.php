@@ -16,7 +16,7 @@
             if (!empty($_SESSION['advert'])) {
                 $class = ($_SESSION['advert']['type'] == 'error') ? 'danger' : 'success';
                 
-                echo '<div class="alert alert-'.$class.'" role="alert">' . $_SESSION['advert']['message'] . '</div>';
+                echo '<div class="alert alert-'.$class.'" role="alert">' . htmlentities($_SESSION['advert']['message']) . '</div>';
                 
                 $_SESSION['advert'] = [];
             }

@@ -27,6 +27,12 @@
                 <label for="promo">Année de la promotion</label>
                 <input type="number" class="form-control" min="<?= date('Y')-5; ?>" max="<?= date('Y')+5; ?>" value="<?= date('Y'); ?>">
               </div>
+              <div class="form-group">
+                <label for="promo">Choisissez une filière</label>
+                <select name="filiere" id="filiere" class="form-control">
+                    <option value="1">Bachelor web</option>
+                </select>
+              </div>
               <button type="submit" class="btn btn-success">Enregistrer</button>
             </form>
         </main>

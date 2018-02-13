@@ -10,13 +10,13 @@ Chaque membre doit s'inscrire avec son adresse HETIC.net.
 
 ## Installation
 
-Cloner le git
+1. Cloner le git
 
 ```bash
 $ git clone https://github.com/SundownDEV/si4
 ```
 
-Créer le fichier de configuration db.php et le remplir
+2. Créer le fichier de configuration db.php et le remplir
 
 ```bash
 $ cd app/config
@@ -31,15 +31,9 @@ $db = [
     'password' => '',
     'charset' => 'utf8'
 ];
-
-// Hash SHA-512 pour le hash de mots de passe
-$app_options = [
-    'private_key' => '', // Placez un hash en SHA-512 ici
-    'salt' => '' // salt aléatoire
-];
 ```
 
-Importer la base de donnée via le fichier references/database.sql
+3. Importer la base de donnée via le fichier references/database.sql
 
 ```bash
 $ mysql -u root -p database_name < references/database.sql

@@ -26,17 +26,6 @@
               <div class="form-group">
                 <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la filière">
               </div>
-              <div class="form-group">
-                <label for="promo">Ajouter directement une promotion</label>
-                <select name="promo" id="promo" class="form-control">
-                    <option value="<?= date('Y'); ?>">P<?= date('Y'); ?></option>
-                    <option value="<?= date('Y')+1; ?>">P<?= date('Y')+1; ?></option>
-                    <option value="<?= date('Y')+2; ?>">P<?= date('Y')+2; ?></option>
-                    <option value="<?= date('Y')+3; ?>">P<?= date('Y')+3; ?></option>
-                    <option value="<?= date('Y')+4; ?>">P<?= date('Y')+4; ?></option>
-                    <option value="<?= date('Y')+5; ?>">P<?= date('Y')+5; ?></option>
-                </select>
-              </div>
               <button type="submit" class="btn btn-success">Enregistrer</button>
             </form>
         </main>
