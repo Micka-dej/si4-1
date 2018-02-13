@@ -55,3 +55,6 @@ if (isset($_SESSION['auth']) && $_SESSION['auth'] === true) {
 }
 
 //var_dump($_SESSION);
+
+$page = (!empty($page)) ? $page : '';
+$title = (!empty($title)) ? $title : '';

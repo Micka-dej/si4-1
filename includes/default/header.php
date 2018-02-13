@@ -23,12 +23,13 @@
             <li><a href='#' class='menuLI <?= ($title == 'grandeecole') ? 'menuLI-isactive' : '' ?>'>Grande Ecole</a></li>
             <li><a href='#' class='menuLI <?= ($title == 'marketing') ? 'menuLI-isactive' : '' ?>'>Marketing</a></li>
             <li><a href='#' class='menuLI <?= ($title == 'master') ? 'menuLI-isactive' : '' ?>'>Master</a></li>
+            <li><a href='#' class='menuLI <?= ($title == 'master') ? 'menuLI-isactive' : '' ?>'>Bachelor 3D</a></li>
         </ul>
     </div>
     
     <div class="account">
     <img src="<?= DIR_ASSETS; ?>/img/avatar.png" width="32" alt="">
-    <a href="#"><?= $_SESSION['username']; ?></a> <a href="logout.php?csrf=<?= $_SESSION['csrf']; ?>" style="font-size:13px;">Déconnexion</a>
+    <a href="#"><?= $_SESSION['username']; ?></a> <a href="logout.php?csrf=<?= $_SESSION['csrf']; ?>" style="font-size:13px;margin-top:5px;">Déconnexion</a>
     </div>
     <?php endif; ?>
 </header>
