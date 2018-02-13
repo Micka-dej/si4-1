@@ -5,6 +5,8 @@
     $title = 'Editer une filière';
 
     require_once INCLUDES . '/admin/header.php';
+
+    require_once DIR_MODELS . '/admin/edit_filiere.php';
 ?>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">

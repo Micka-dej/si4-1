@@ -2,6 +2,8 @@
   require_once '../app/config/system.php';
 
   require_once INCLUDES . '/default/header.php';
+
+  require_once DIR_MODELS . '/default/reseau.php';
 ?>
 
 <section class="container">

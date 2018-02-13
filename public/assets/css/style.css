@@ -246,3 +246,21 @@ textarea {
 .msg.error {
     color: #da3c3c;
 }
+
+@media(max-width: 1530px){
+    .containerHeader {
+        display: block;
+    }
+    
+    .menu {
+        width: fit-content;
+        margin: auto;
+        padding: 0;
+    }
+    
+    .account {
+        margin-top: 25px;
+        width: fit-content;
+        float: right;
+    }
+}
