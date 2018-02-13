@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  mar. 13 fév. 2018 à 22:00
+-- Généré le :  mar. 13 fév. 2018 à 23:56
 -- Version du serveur :  5.7.20
 -- Version de PHP :  7.0.25-1~dotdeb+8.1
 
@@ -43,7 +43,20 @@ CREATE TABLE `categories` (
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `promo.id` int(11) NOT NULL
+  `promoID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `events`
+--
+
+CREATE TABLE `events` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -60,14 +73,27 @@ CREATE TABLE `filieres` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `messages`
+--
+
+CREATE TABLE `messages` (
+  `id` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `promoID` int(11) NOT NULL,
+  `content` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `posts`
 --
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
-  `user.id` int(11) NOT NULL,
-  `category.id` int(11) NOT NULL,
-  `class.id` int(11) NOT NULL,
+  `userID` int(11) NOT NULL,
+  `categoryID` int(11) NOT NULL,
+  `classID` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -81,7 +107,7 @@ CREATE TABLE `posts` (
 CREATE TABLE `promos` (
   `id` int(11) NOT NULL,
   `year` int(11) NOT NULL,
-  `filiere.id` int(11) NOT NULL
+  `filiereID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -95,7 +121,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `promo.id` int(11) NOT NULL,
+  `promoID` int(11) NOT NULL,
   `role` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -103,8 +129,8 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `username`, `password`, `promo.id`, `role`) VALUES
-(1, 'test@hetic.net', 'sundown', '$2y$12$Ohk//v6ETIlIHmQdVsIh3OnEwzKpByS3xwuiEsbovLetdXjEQG1Su', 1, 0);
+INSERT INTO `users` (`id`, `email`, `username`, `password`, `promoID`, `role`) VALUES
+(1, 'test@hetic.net', 'sundown', '$2y$12$YjjVhcOdT11N0Tz/gClSueAbfFkoYwkYbyVaNFH7BZvDNGzLA70EC', 1, 1);
 
 --
 -- Index pour les tables déchargées
@@ -123,9 +149,21 @@ ALTER TABLE `courses`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `events`
+--
+ALTER TABLE `events`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `filieres`
 --
 ALTER TABLE `filieres`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `messages`
+--
+ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -163,9 +201,21 @@ ALTER TABLE `courses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `events`
+--
+ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT pour la table `filieres`
 --
 ALTER TABLE `filieres`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT pour la table `messages`
+--
+ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -178,7 +228,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT pour la table `promos`
 --
 ALTER TABLE `promos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `users`
