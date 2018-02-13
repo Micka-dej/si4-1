@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?= DIR_ASSETS; ?>/css/reset.css">
     <link rel="stylesheet" href="<?= DIR_ASSETS; ?>/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
-    <title><?= (!empty($title)) ? APP_NAME . ' ' . $title : APP_NAME ?></title>
+    <title><?= (!empty($title)) ? APP_NAME . ' - ' . $title : APP_NAME; ?></title>
     <link rel="icon" type="img/png" href="<?= DIR_ASSETS; ?>/img/favicon.png" />
 </head>
 <body>
@@ -27,7 +27,7 @@
     </div>
     
     <div class="account">
-    <img src="<?= DIR_ASSETS; ?>/img/avatar.png" alt="">
+    <img src="<?= DIR_ASSETS; ?>/img/avatar.png" width="32" alt="">
     <a href="#">Mon Compte</a>
     </div>
     <?php endif; ?>
