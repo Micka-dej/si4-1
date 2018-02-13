@@ -13,7 +13,7 @@
 <body>
 <header class="containerHeader">
     <div class="logoNav">
-        <img src="<?= DIR_ASSETS; ?>/img/logo.svg" width="164" src="" alt="">
+        <a href="<?= WEBROOT; ?>"><img src="<?= DIR_ASSETS; ?>/img/logo.svg" width="164" src="" alt=""></a>
     </div>
     
     <?php if ($_SESSION['auth']): ?>

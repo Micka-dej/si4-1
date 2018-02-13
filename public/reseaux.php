@@ -4,13 +4,9 @@
   require_once INCLUDES . '/default/header.php';
 ?>
 
-<section class="Container">
+<section class="container">
 
-  <div class="ContainerTheme">
-    <h1 class="Devoirs">Devoirs</h1>a
-    <h1 class="reseaux">Réseaux</h1>
-    <h1 class="Evenements">Événements</h1>
-  </div>
+  <?php require_once INCLUDES . '/default/sidebar.php'; ?>
 
   <div class="RectangleCommentaire">
     <img class="Picture" src="" alt="">
