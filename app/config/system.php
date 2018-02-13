@@ -9,14 +9,19 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-/* 
+/*
  * define() permet de définir une constante
  * TOUJOURS en majuscules le nom des constantes
  */
 define('APP_NAME', 'Orgatic');
 
 define('ROOT', dirname(dirname($_SERVER['SCRIPT_FILENAME'])));
-define('WEBROOT', dirname($_SERVER['SCRIPT_NAME']));
+if (dirname($_SERVER['SCRIPT_NAME']) != '/') {
+    define('WEBROOT', dirname($_SERVER['SCRIPT_NAME']).'/');
+}else{
+    define('WEBROOT', dirname($_SERVER['SCRIPT_NAME']));
+}
+
 define('DIR_ASSETS', WEBROOT . 'assets');
 define('DIR_APP', ROOT . '/app');
 define('DIR_CONFIG', DIR_APP . 'config');
@@ -49,3 +54,6 @@ if (isset($_SESSION['auth']) && $_SESSION['auth'] === true) {
 }
 
 //var_dump($_SESSION);
+
+// Si aucun titre n'existe, l'initialiser avec une chaîne vide
+if (empty($title)) { $title = ''; }

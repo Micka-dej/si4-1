@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -12,19 +13,32 @@
 <body>
 <header class="containerHeader">
     <div class="logoNav">
-        <img class="<?= DIR_ASSETS; ?>/img/logo.svg" src="" alt="">
+        <img src="<?= DIR_ASSETS; ?>/img/logo.svg" width="164" src="" alt="">
     </div>
-
+    
+    <?php if ($_SESSION['auth']): ?>
     <div>
         <ul class="menu">
-            <li><a href='#' class='menuLI'>Web</a></li>
-            <li><a href='#' class='menuLI'>Grande Ecole</a></li>
-            <li><a href='#' class='menuLI'>Marketing</a></li>
-            <li><a href='#' class='menuLI'>Master</a></li>
+            <li><a href='#' class='menuLI <?= ($title == 'web') ? 'menuLI-isactive' : '' ?>'>Web</a></li>
+            <li><a href='#' class='menuLI <?= ($title == 'grandeecole') ? 'menuLI-isactive' : '' ?>'>Grande Ecole</a></li>
+            <li><a href='#' class='menuLI <?= ($title == 'marketing') ? 'menuLI-isactive' : '' ?>'>Marketing</a></li>
+            <li><a href='#' class='menuLI <?= ($title == 'master') ? 'menuLI-isactive' : '' ?>'>Master</a></li>
         </ul>
     </div>
+    
     <div class="account">
-        <img src="<?= DIR_ASSETS; ?>/img/avatar.png" alt="">
-        <a href="#">Mon Compte</a>
+    <img src="<?= DIR_ASSETS; ?>/img/avatar.png" alt="">
+    <a href="#">Mon Compte</a>
     </div>
+    <?php endif; ?>
 </header>
+
+   <?php if ($_SESSION['auth']): ?>
+    <div class="classes">
+      <ul>
+          <li class="active"><a href="#">P2020</a></li>
+          <li><a href="#">P2019</a></li>
+          <li><a href="#">P2018</a></li>
+      </ul>
+    </div>
+    <?php endif; ?>
