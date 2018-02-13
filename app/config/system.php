@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-/* 
+/*
  * define() permet de définir une constante
  * TOUJOURS en majuscules le nom des constantes
  */
@@ -32,7 +32,7 @@ $options = array(
     PDO::ATTR_PERSISTENT    => true,
     PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION
 );
-
+/*
 try{
     $bdd = new PDO($dsn, $db['user'], $db['password'], $options);
 }
@@ -40,7 +40,7 @@ try{
 catch (PDOException $e) {
     $error = $e->getMessage();
 }
-
+*/
 // Session init
 if (isset($_SESSION['auth']) && $_SESSION['auth'] === true) {
     //
