@@ -1,0 +1,5 @@
+{
+    "autoload": {
+        "files": ["app/config/system.php"]
+    }
+}
