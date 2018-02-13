@@ -4,7 +4,7 @@
   require_once INCLUDES . '/default/header.php';
 ?>
 
-<section class="Container">
+<section class="container">
 
   <?php require_once INCLUDES . '/default/sidebar.php'; ?>
 
@@ -30,10 +30,8 @@
     <p class="Commentaires3">Le monstre.</p>
 <img class="hearth" src="<?= DIR_ASSETS; ?>/img/coeur.svg" alt="">
   </div>
-
-
-
 </section>
 
-
-</body>
+<?php
+    require_once INCLUDES . '/default/footer.php';
+?>
