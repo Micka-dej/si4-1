@@ -161,3 +161,84 @@ height: 15px;
 font-size: 18px;
 margin-left: 60px;
 }
+
+/* Events */
+
+.eventBox {
+  width: 20px;
+  display: flex;
+  margin-left: 500px;
+  margin-top: 280px;
+
+}
+
+.box {
+  padding: 30px;
+}
+
+.md {
+  font-family: 'lato';
+  font-size: 10px;
+  margin-right: 150px;
+  color: #168B37;
+}
+
+.zd {
+  font-family: 'lato';
+  font-size: 10px;
+  margin-right: 150px;
+  color: #168B37;
+}
+
+.vd {
+  font-family: 'lato';
+  font-size: 10px;
+  margin-right: 135px;
+  color: #168B37;
+}
+
+.ld {
+  font-family: 'lato';
+  font-size: 10px;
+  margin-right: 110px;
+  color: #168B37;
+
+}
+
+.za {
+  font-family: 'lato';
+  font-size: 10px;
+  font-weight: 300;
+
+}
+
+.lol{
+  display: flex;
+  flex-direction: row;
+}
+
+.pictures {
+  width: 250px;
+  height: 70%;
+}
+
+/* AGENDA */
+
+.mainContent {
+  padding-top: 150px;
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0px 20px;
+  margin: auto;
+}
+
+.containerAgenda {
+  max-width: 1035px;
+  min-height: 600px;
+  background: #F5F7F8;
+  text-align: center;
+}
+
+/* Inscription */
