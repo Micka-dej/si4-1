@@ -1,5 +1,7 @@
 <?php
 
+ini_set('session.gc_maxlifetime', '3600');
+date_default_timezone_set('Europe/Paris');
 session_start();
 
 // Permet d'activer temporairement les erreurs PHP
@@ -40,6 +42,10 @@ catch (PDOException $e) {
 }
 
 // Session init
-if (!isset($_SESSION) || $_SESSION['auth'] !== true) {
+if (isset($_SESSION['auth']) && $_SESSION['auth'] === true) {
+    //
+}else{
     $_SESSION['auth'] = false;
 }
+
+//var_dump($_SESSION);
