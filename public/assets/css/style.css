@@ -170,17 +170,16 @@ textarea {
 }
 
 .ContainerTheme a {
-  color: #168B37;
+  color: #535353;
 }
 
-.Devoirs {
+.sidebarLi {
   font-size:20px;
-  color: #555555;
   font-weight: 300;
   margin-bottom: 45px;
 }
 
-.reseaux {
+.sidebarLi.active a {
   font-size: 22px;
   margin-bottom: 45px;
   font-weight: 500;
