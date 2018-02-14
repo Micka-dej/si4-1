@@ -2,7 +2,7 @@
 
 require_once '../app/config/system.php';
 
-require_once INCLUDES . '/admin/auth.php';
+require_once INCLUDES . '/default/auth.php';
 
 require_once INCLUDES . '/default/header.php';
 
@@ -10,8 +10,13 @@ require_once INCLUDES . '/default/header.php';
 
 ?>
 
+
 <div class="container">
-   <p>test</p>
+    <?php require_once INCLUDES . '/default/sidebar.php'; ?>
+
+    <div class="container-content">
+        <p>test</p>
+    </div>
 </div>
 
 <?php

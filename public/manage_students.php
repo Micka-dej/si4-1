@@ -4,6 +4,8 @@
     $page = 'manage_students';
     $title = 'Gérer les étudiants';
 
+    require_once DIR_MODELS . '/admin/manage_students.php';
+
     require_once INCLUDES . '/admin/header.php';
 ?>
 
@@ -34,20 +36,29 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="edit_student.php?id=1">Raphael Cerveaux</a></td>
-                        <td>raphael.cerveaux@hetic.net</td>
-                        <td>Bachelor web</td>
-                        <td>2020</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Modifier</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="edit_student.php?id=1">Raphael Cerveaux</a></td>
-                        <td>raphael.cerveaux@hetic.net</td>
-                        <td>Bachelor web</td>
-                        <td>2020</td>
-                        <td><a href="edit_student.php?id=1" class="btn btn-sm btn-primary">Modifier</a></td>
-                    </tr>
+                    <?php
+                        foreach ($students as $student) {
+                            $req = $bdd->prepare('SELECT * FROM promos WHERE id = ?');
+                            $req->execute([
+                                $student['promoID']
+                            ]);
+                            $promo = $req->fetch();
+
+                            $req = $bdd->prepare('SELECT * FROM filieres WHERE id = ?');
+                            $req->execute([
+                                $promo['filiereID']
+                            ]);
+                            $filiere = $req->fetch();
+
+                            echo '<tr>';
+                            echo '<td><a href="edit_student.php?id='.$student['id'].'">'.$student['username'].'</a></td>';
+                            echo '<td>'.$student['email'].'</td>';
+                            echo '<td>'.$filiere['name'].'</td>';
+                            echo '<td>'.$promo['year'].'</td>';
+                            echo '<td><a href="edit_student.php?id='.$student['id'].'" class="btn btn-sm btn-primary">Modifier</a></td>';
+                            echo '</tr>';
+                        }
+                    ?>
                     </tbody>
                 </table>
             </div>

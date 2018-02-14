@@ -25,7 +25,7 @@
             <form action="do/add_promo.php" method="post">
               <div class="form-group">
                 <label for="promo">Année de la promotion</label>
-                <input type="number" class="form-control" min="<?= date('Y')-5; ?>" max="<?= date('Y')+5; ?>" value="<?= date('Y'); ?>">
+                <input type="number" name="year" class="form-control" min="<?= date('Y')-5; ?>" max="<?= date('Y')+5; ?>" value="<?= date('Y'); ?>">
               </div>
               <div class="form-group">
                 <label for="promo">Choisissez une filière</label>

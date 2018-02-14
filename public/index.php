@@ -25,7 +25,7 @@ require_once DIR_MODELS . '/default/home.php';
             }
         ?>
         
-        <form action="do/login.php" method="post">
+        <form action="do/login.php" method="post" class="form-connexion">
             <input type="email" name="email" placeholder="Adresse email HETIC.net">
             <input type="password" name="password" placeholder="Mot de passe">
             <button class="button" type="submit">Connexion</button>

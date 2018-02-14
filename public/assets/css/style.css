@@ -58,6 +58,8 @@ body {
     padding: 30px 10px;
     margin-top: 30px;
     background: #fff;
+    display: flex;
+    justify-content: space-between;
 }
 
 .inscriptionPage {
@@ -104,7 +106,7 @@ body {
     font-weight: 500;
 }
 
-form {
+.form-connexion {
     display: inline-block;
     margin: auto;
     width: 80%;
@@ -164,7 +166,6 @@ textarea {
 }
 
 .ContainerTheme {
-  position: absolute;
   margin-top: 180px;
   margin-left: 20px;
 }
@@ -193,9 +194,8 @@ textarea {
 }
 
 .RectangleCommentaire {
-  margin-left: 268px;
   background-color: #F9FAFB;
-  width:910px;
+  width: 95%;
   margin-bottom: 30px;
   display: inline-block;
 }
@@ -218,7 +218,7 @@ textarea {
   color: #535353;
   font-weight: lighter;
   font-size: 18px;
-  margin-left: 60px;
+  margin-left: 75px;
 }
 
 .Commentaires2 {
@@ -244,6 +244,32 @@ textarea {
 
 .msg.error {
     color: #da3c3c;
+}
+
+.msg.success {
+    color: #168B37;
+}
+
+.container-content {
+    width: 85%;
+    display: -webkit-inline-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-message {
+    width: 100%;
+}
+
+form textarea {
+    border: 1px solid #c2c2c2;
+    padding: 10px;
+    margin: 5px 0px 20px;
+    height: 215px;
+    margin-top: 20px;
+    font-family: 'Lato';
+    font-size: 16px;
+    resize: none;
 }
 
 @media(max-width: 1530px){

@@ -12,9 +12,10 @@
             if(password_verify($_POST['password'], $user['password'])){
                 $_SESSION = [
                     'auth' => true,
+                    'id' => $user['id'],
                     'username' => $user['username'],
                     'email' => $user['email'],
-                    'role' => $user['promo.id'],
+                    'promoID' => $user['promoID'],
                     'role' => $user['role'],
                     'csrf' => md5(uniqid(rand(), TRUE))
                 ];

@@ -23,7 +23,7 @@
             ?>
             
             <div style="margin-bottom:20px;">
-                <a href="add_course.php" class="btn btn-sm btn-primary">Ajouter une promotion</a>
+                <a href="add_course.php" class="btn btn-sm btn-primary">Ajouter une matière</a>
             </div>
 
             <div class="table-responsive">
