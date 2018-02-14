@@ -4,6 +4,7 @@
     $page = 'manage_courses';
     $title = 'Gérer les matières';
 
+    require_once DIR_MODELS . '/admin/manage_courses.php';
     require_once INCLUDES . '/admin/header.php';
 ?>
 
@@ -13,6 +14,7 @@
             </div>
             
             <?php
+
             if (!empty($_SESSION['advert'])) {
                 $class = ($_SESSION['advert']['type'] == 'error') ? 'danger' : 'success';
                 
@@ -36,16 +38,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="edit_course.php?id=1">Intégration</a></td>
-                        <td>Bachelor web</td>
-                        <td><a href="#" class="btn btn-sm btn-primary">Modifier</a> <a href="#" class="btn btn-sm btn-danger">Supprimer</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="edit_filiere.php?id=1">Outils design</a></td>
-                        <td>Grande école</td>
-                        <td><a href="edit_course.php?id=1" class="btn btn-sm btn-primary">Modifier</a> <a href="delete_course.php?id=1" class="btn btn-sm btn-danger">Supprimer</a></td>
-                    </tr>
+                    <?php
+                    foreach($courses as $course){
+                        $req = $bdd->prepare('SELECT * FROM filieres WHERE id = ?');
+                        $req->execute([$course['filiereID']]);
+
+                        $filiere = $req->fetch();
+
+
+
+                        echo '<tr>';
+                        echo '<td><a href="edit_course.php?id='.$course['id'].'">'.htmlentities($course['name']).'</a></td>';
+                        echo '<td>'.htmlentities($filiere['name']).'</td>';
+                        echo '<td><a href="edit_course.php?id='.$course['id'].'" class="btn btn-sm btn-primary">Modifier</a> <a href="do/delete_course.php?id='.$course['id'].'&csrf='.$_SESSION['csrf'].'" class="btn btn-sm btn-danger">Supprimer</a></td>';
+                        echo '</tr>';
+
+                    }
+                    ?>
+
                     </tbody>
                 </table>
             </div>
