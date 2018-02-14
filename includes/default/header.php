@@ -13,17 +13,13 @@
 <body>
 <header class="containerHeader">
     <div class="logoNav">
-        <a href="<?= WEBROOT; ?>"><img src="<?= DIR_ASSETS; ?>/img/logo.svg" width="164" src="" alt=""></a>
+        <a href="<?= WEBROOT; ?>"><img src="<?= DIR_ASSETS; ?>/img/logo.png" width="164" src="" alt=""></a>
     </div>
     
     <?php if ($_SESSION['auth']): ?>
     <div>
         <ul class="menu">
-            <li><a href='#' class='menuLI <?= ($title == 'web') ? 'menuLI-isactive' : '' ?>'>Web</a></li>
-            <li><a href='#' class='menuLI <?= ($title == 'grandeecole') ? 'menuLI-isactive' : '' ?>'>Grande Ecole</a></li>
-            <li><a href='#' class='menuLI <?= ($title == 'marketing') ? 'menuLI-isactive' : '' ?>'>Marketing</a></li>
-            <li><a href='#' class='menuLI <?= ($title == 'master') ? 'menuLI-isactive' : '' ?>'>Master</a></li>
-            <li><a href='#' class='menuLI <?= ($title == 'master') ? 'menuLI-isactive' : '' ?>'>Bachelor 3D</a></li>
+            <li><a href='#' class='menuLI <?= ($title == 'web') ? 'menuLI-isactive' : '' ?>'>WEB P2020</a></li>
         </ul>
     </div>
     
@@ -33,13 +29,3 @@
     </div>
     <?php endif; ?>
 </header>
-
-   <?php if ($_SESSION['auth']): ?>
-    <div class="classes">
-      <ul>
-          <li class="active"><a href="#">P2020</a></li>
-          <li><a href="#">P2019</a></li>
-          <li><a href="#">P2018</a></li>
-      </ul>
-    </div>
-    <?php endif; ?>
