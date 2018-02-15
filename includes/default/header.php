@@ -31,7 +31,7 @@
     <div class="account" style="width: 200px;">
     <img src="<?= DIR_ASSETS; ?>/img/avatar.png" width="32" alt="" style="float: left;margin-right: 10px;">
     <a href="#"><?= $_SESSION['username']; ?></a>
-    <i style="font-size: 14px;display: -webkit-box;"><?= $_SESSION['filiere']['name'] . ' ' . $_SESSION['filiere']['year']; ?></i>
+    <i style="font-size: 14px;display: -webkit-box;"><?= $_SESSION['filiere']['name'] . ' P' . $_SESSION['filiere']['year']; ?></i>
     <a href="logout.php?csrf=<?= $_SESSION['csrf']; ?>" style="font-size:13px;margin-top:5px;">Déconnexion</a>
     </div>
     <?php endif; ?>

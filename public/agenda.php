@@ -26,7 +26,7 @@ if (!empty($_SESSION['advert'])) {
 
             <form action="<?= WEBROOT; ?>do/post_agenda.php" method="post" class="form-message">
                 <label for="message" style="color: #535353;">Contenu du post-it :</label>
-                <textarea name="message" id="message" cols="30" rows="5" placeholder="Pour une meilleure lisibilité, écrivez avec un français correcte."></textarea>
+                <textarea name="message" id="message" cols="30" rows="5" placeholder="Pour une meilleure lisibilité, écrivez avec un français correct."></textarea>
                 <div>
                     <select name="course" style="width: 95%;border: none;padding: 10px;margin: 10px 0;">
                         <?php

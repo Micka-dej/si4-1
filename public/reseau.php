@@ -26,7 +26,7 @@ if (!empty($_SESSION['advert'])) {
 
         <form action="<?= WEBROOT; ?>do/post_message.php" method="post" class="form-message">
             <label for="message" style="color: #535353;">Votre message :</label>
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Pour une meilleure lisibilité, écrivez avec un français correcte."></textarea>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Pour une meilleure lisibilité, écrivez avec un français correct."></textarea>
             <button type="submit" class="button" style="width:200px;">Publier</button>
         </form>
 
@@ -37,7 +37,7 @@ if (!empty($_SESSION['advert'])) {
             echo '<div class="RectangleCommentaire" style="padding:30px;">';
             echo '<img src="'.DIR_ASSETS.'/img/avatar.png" width="64" style="float:left;margin-right:10px;" alt="">';
             echo '<h2 class="Name">Par '.$message['user'].' le '.date('d/m/y à H:m', strtotime($message['date'])).'</h2>';
-            echo '<p class="Commentaires1">'.htmlentities($message['content']).'</p>';
+            echo '<p class="Commentaires1">'.nl2br(htmlentities($message['content'])).'</p>';
             echo '</div>';
         }
     ?>

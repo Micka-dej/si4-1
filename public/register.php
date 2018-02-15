@@ -29,8 +29,8 @@ require_once DIR_MODELS . '/default/register.php';
                 <input type="text" name="name" placeholder="Nom">
                 <input type="text" name="firstname" placeholder="Prénom">
                 <input type="email" name="email" placeholder="Adresse email HETIC.net">
-                <input type="password" name="password" placeholder="Mot de place">
-                <input type="password" name="repeatpassword" placeholder="Confirmer mot de place">
+                <input type="password" name="password" placeholder="Mot de passe">
+                <input type="password" name="repeatpassword" placeholder="Confirmer mot de passe">
                 <div>
                     <label for="promo">Choisissez une filière</label>
                     <select name="promo" id="promo" class="form-control" style="width: 100%;border: none;padding: 10px;margin: 10px 0;">

@@ -40,7 +40,7 @@ $options = array(
 );
 
 
-try{
+try {
     $bdd = new PDO($dsn, $db['user'], $db['password'], $options);
 }
 // catch any errors
