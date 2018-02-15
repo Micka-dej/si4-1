@@ -20,7 +20,7 @@ require_once DIR_MODELS . '/default/register.php';
 
             <?php
             if (!empty($_SESSION['advert'])) {
-                echo '<p class="msg '.$_SESSION['advert']['type'].'">'.$_SESSION['advert']['message'].'</p>';
+                echo '<p class="msg '.htmlentities($_SESSION['advert']['type']).'">'.htmlentities($_SESSION['advert']['message']).'</p>';
                 $_SESSION['advert'] = [];
             }
             ?>
@@ -36,7 +36,7 @@ require_once DIR_MODELS . '/default/register.php';
                     <select name="promo" id="promo" class="form-control" style="width: 100%;border: none;padding: 10px;margin: 10px 0;">
                         <?php
                         foreach ($promos as $promo) {
-                            echo '<option value="'.$promo['id'].'" ' . ($promo['id'] == $user['promoID'] ? 'selected' : '') . '>'.$promo['filiere'].' P'.$promo['year'].'</option>';
+                            echo '<option value="'.$promo['id'].'" ' . ($promo['id'] == $user['promoID'] ? 'selected' : '') . '>'.htmlentities($promo['filiere']).' P'.htmlentities($promo['year']).'</option>';
                         }
                         ?>
                     </select>
