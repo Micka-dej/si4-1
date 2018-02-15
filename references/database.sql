@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le :  jeu. 15 fév. 2018 à 19:01
+-- Généré le :  jeu. 15 fév. 2018 à 19:40
 -- Version du serveur :  5.7.21-0ubuntu0.17.10.1
 -- Version de PHP :  7.1.14-1+ubuntu17.10.1+deb.sury.org+1
 
@@ -44,7 +44,8 @@ INSERT INTO `courses` (`id`, `name`, `filiereID`) VALUES
 (14, 'Intégration', 1),
 (15, 'Anglais', 1),
 (16, 'Développement corporel', 10),
-(17, 'Développement back', 1);
+(17, 'Développement back', 1),
+(18, 'Algorithmie', 1);
 
 -- --------------------------------------------------------
 
@@ -94,21 +95,6 @@ CREATE TABLE `messages` (
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `messages`
---
-
-INSERT INTO `messages` (`id`, `userID`, `promoID`, `content`, `date`) VALUES
-(5, 1, 1, 'lul', '2018-02-14 12:57:40'),
-(6, 1, 1, 'ayyy', '2018-02-14 13:03:23'),
-(7, 1, 1, 'dedaza', '2018-02-14 13:07:29'),
-(8, 1, 1, '<h1>\"é&\'é\"&=)</', '2018-02-14 13:07:42'),
-(9, 1, 1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet doloremque facilis, fugiat illo ipsum iste magni molestias non odit quasi rem rerum, veritatis voluptates voluptatibus. Blanditiis laborum nobis reprehenderit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet doloremque facilis, fugiat illo ipsum iste magni molestias non odit quasi rem rerum, veritatis voluptates voluptatibus. Blanditiis laborum nobis reprehenderit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet doloremque facilis, fugiat illo ipsum iste magni molestias non odit quasi rem rerum, veritatis voluptates voluptatibus. Blanditiis laborum nobis reprehenderit! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet doloremque facilis, fugiat illo ipsum iste magni molestias non odit quasi rem rerum, veritatis voluptates voluptatibus. Blanditiis laborum nobis reprehenderit!\r\n', '2018-02-15 09:37:53'),
-(10, 1, 1, 'bonjour', '2018-02-15 11:03:46'),
-(11, 1, 2, 'coucou', '2018-02-15 13:24:37'),
-(12, 1, 2, 'cc', '2018-02-15 17:39:26'),
-(13, 1, 5, 'bonjour', '2018-02-15 18:56:12');
-
 -- --------------------------------------------------------
 
 --
@@ -124,15 +110,6 @@ CREATE TABLE `posts` (
   `dateLimite` datetime NOT NULL,
   `courseID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `posts`
---
-
-INSERT INTO `posts` (`id`, `userID`, `promoID`, `date`, `content`, `dateLimite`, `courseID`) VALUES
-(12, 1, 2, '2018-02-15 13:20:24', 'écrire une lettre au père noel en anglais', '2018-02-19 00:00:00', 15),
-(13, 1, 2, '2018-02-15 15:30:37', 'Faire un crud', '2018-02-16 00:00:00', 17),
-(14, 1, 5, '2018-02-15 18:56:04', 'faire une lettre', '2018-12-31 00:00:00', 15);
 
 -- --------------------------------------------------------
 
@@ -235,13 +212,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `filieres`
@@ -253,13 +230,13 @@ ALTER TABLE `filieres`
 -- AUTO_INCREMENT pour la table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `promos`
