@@ -38,6 +38,7 @@ $options = array(
     PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION
 );
 
+
 try{
     $bdd = new PDO($dsn, $db['user'], $db['password'], $options);
 }
