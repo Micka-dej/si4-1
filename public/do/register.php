@@ -27,7 +27,7 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['emai
                     'auth' => true,
                     'id' => $bdd->lastInsertId(),
                     'username' => $username,
-                    'email' => $user['email'],
+                    'email' => $_POST['email'],
                     'promoID' => $_POST['promo'],
                     'role' => 0,
                     'csrf' => md5(uniqid(rand(), TRUE))
