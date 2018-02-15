@@ -12,7 +12,7 @@ if(!empty($_GET['id']) && !empty($_GET['csrf']) && $_GET['csrf'] == $_SESSION['c
     $event = $req->fetch();
 
     if ($event) {
-        unlink(ROOT . "/assets/img/covers/" . $_GET['id'] . $event['cover']);
+        unlink(ROOT . "/assets/img/covers/" . $_GET['id'] . '.' . $event['cover']);
     
         $req = $bdd->prepare('DELETE FROM `events` WHERE id = :id');
         $req->execute([
