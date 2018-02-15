@@ -1,5 +1,9 @@
 <?php
 
+if ($_SESSION['auth']) {
+    redirect('agenda.php');
+}
+
 $req = $bdd->prepare('SELECT * FROM promos ORDER BY id DESC');
 $req->execute();
 $promos = $req->fetchAll();

@@ -84,7 +84,7 @@ require_once 'auth.php';
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= ($page == 'manage_events') ? 'active' : ''; ?>" href="<?= WEBROOT; ?>manage_events.php">
-                            <span data-feather="users"></span>
+                            <span data-feather="calendar"></span>
                             Événements
                         </a>
                     </li>
