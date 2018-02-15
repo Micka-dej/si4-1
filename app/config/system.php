@@ -16,6 +16,7 @@ ini_set('display_startup_errors', 1);
 define('APP_NAME', 'Orgatic');
 
 define('ROOT', dirname(dirname($_SERVER['SCRIPT_FILENAME'])));
+
 if (dirname($_SERVER['SCRIPT_NAME']) != '/') {
     define('WEBROOT', dirname($_SERVER['SCRIPT_NAME']).'/');
 }else{
@@ -56,5 +57,5 @@ if (isset($_SESSION['auth']) && $_SESSION['auth'] === true) {
 
 //var_dump($_SESSION);
 
-// Si aucun titre n'existe, l'initialiser avec une chaîne vide
-if (empty($title)) { $title = ''; }
+$page = (!empty($page)) ? $page : '';
+$title = (!empty($title)) ? $title : '';

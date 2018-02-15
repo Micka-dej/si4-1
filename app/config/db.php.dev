@@ -7,12 +7,3 @@ $db = [
     'password' => '',
     'charset' => 'utf8'
 ];
-
-/*
- * Hash SHA-512 pour le hash de mots de passe
- * Valeurs par défaut :
- */
-$app_options = [
-    'private_key' => '1E23C8ED7E08ABEB4FE3E5A3DEF219FC4D43EF3A130FE975BE50F9A246711D97A4F91B90822B50F68FED0DC6A3ADA3B8FC9FC6254CE01DA0AD438FFA50D903EA',
-    'salt' => 'sW5Yd1aPlmN'
-];

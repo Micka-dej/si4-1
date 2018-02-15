@@ -4,13 +4,18 @@ body {
   font-size: 18px;
   font-family: 'lato';
   margin: 0;
+  background: #FAFAFA;
+}
+
+a {
+    color: #168B37;
 }
 
 .containerHeader {
   margin-top: 0;
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 80%;
   margin: auto;
   padding-top: 50px;
 }
@@ -18,10 +23,8 @@ body {
 .menu {
   color: #535353;
   font-size: 20px;
-  margin-left: 500px;
   font-weight: 400;
   display: flex;
-  flex-direction: row;
 }
 
 .menuLI {
@@ -36,10 +39,15 @@ body {
   font-weight: 500;
 }
 
+.account {
+    text-align: center;
+}
+
 .account a {
     font-size: 18px;
     color: #535353;
     vertical-align: -webkit-baseline-middle;
+    display: -webkit-box;
 }
 
 .logo {
@@ -50,6 +58,12 @@ body {
 .container {
     width: 80%;
     margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 10px;
+    margin-top: 30px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
 }
 
 .inscriptionPage {
@@ -57,6 +71,7 @@ body {
   margin-left: 50px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .orgaticTitle {
@@ -69,6 +84,10 @@ body {
     color: #4d8c39;
 }
 
+.index-sideText {
+    text-align: center;
+}
+
 .mainParagraph {
   margin: 50px 0;
   font-size: 20px;
@@ -76,7 +95,6 @@ body {
 
 .connexion {
   margin-left: 100px;
-  background:#F9FAFB;
   width: 380px;
   display: flex;
   justify-content: center;
@@ -84,15 +102,15 @@ body {
 }
 
 .connexionTitle {
-  color: green;
-  font-size: 35px;
- margin-top: 50px;
- margin-bottom: 50px;
- display: flex;
- justify-content: center;
+    color: #45a065;
+    font-size: 35px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
 }
 
-form {
+.form-connexion {
     display: inline-block;
     margin: auto;
     width: 80%;
@@ -132,13 +150,13 @@ textarea {
   text-align: center;
   display: flex;
   justify-content: flex-end;
-  width: 90%;
+  width: 80%;
   margin: auto;
 }
 
 .classes ul li {
     display: inline-block;
-    margin: 30px;
+    margin: 30px 0 30px 30px;
     font-size: 21px;
     font-weight: 500;
 }
@@ -152,18 +170,21 @@ textarea {
 }
 
 .ContainerTheme {
-  position: fixed;
   margin-top: 180px;
+  margin-left: 20px;
 }
 
-.Devoirs {
+.ContainerTheme a {
+  color: #535353;
+}
+
+.sidebarLi {
   font-size:20px;
-  color: #555555;
   font-weight: 300;
   margin-bottom: 45px;
 }
 
-.reseaux {
+.sidebarLi.active a {
   font-size: 22px;
   margin-bottom: 45px;
   font-weight: 500;
@@ -177,20 +198,17 @@ textarea {
 }
 
 .RectangleCommentaire {
-  margin-left: 268px;
   background-color: #F9FAFB;
-  width:910px;
-  height:155px;
+  width: 95%;
   margin-bottom: 30px;
+  display: inline-block;
 }
 
 .hearth {
-display: flex;
-float: right;
-margin-right: 15px;
-margin-top: 30px;
-width: 15px;
-height: 15px;
+    float: right;
+    margin: 20px;
+    width: 16px;
+    height: 16px;
 }
 
 .Name {
@@ -200,12 +218,11 @@ height: 15px;
   margin-left: 60px;
 }
 
-
 .Commentaires1 {
   color: #535353;
   font-weight: lighter;
   font-size: 18px;
-  margin-left: 60px;
+  margin-left: 75px;
 }
 
 .Commentaires2 {
@@ -222,6 +239,7 @@ height: 15px;
   margin-left: 60px;
 }
 
+<<<<<<< HEAD
 /* Events */
 
 .eventBox {
@@ -302,3 +320,59 @@ height: 15px;
 }
 
 /* Inscription */
+=======
+.msg {
+    width: 65%;
+    text-align: center;
+    display: block;
+    line-height: 1.5em;
+}
+
+.msg.error {
+    color: #da3c3c;
+}
+
+.msg.success {
+    color: #168B37;
+}
+
+.container-content {
+    width: 85%;
+    display: -webkit-inline-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-message {
+    width: 100%;
+}
+
+form textarea {
+    border: 1px solid #c2c2c2;
+    padding: 10px;
+    margin: 5px 0px 20px;
+    height: 215px;
+    margin-top: 20px;
+    font-family: 'Lato';
+    font-size: 16px;
+    resize: none;
+}
+
+@media(max-width: 1530px){
+    .containerHeader {
+        display: block;
+    }
+    
+    .menu {
+        width: fit-content;
+        margin: auto;
+        padding: 0;
+    }
+    
+    .account {
+        margin-top: 25px;
+        width: fit-content;
+        float: right;
+    }
+}
+>>>>>>> ed2ac9d6c04ebe62949488b4f63eb735f7c6b2c6
