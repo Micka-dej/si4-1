@@ -4,10 +4,11 @@ require_once '../../app/config/system.php';
 
 require_once '../../includes/admin/auth.php';
 
-if (!empty($_POST['name']) && !empty($_POST['id']) && !empty($_POST['description']) && !empty($_POST['csrf']) && $_POST['csrf'] == $_SESSION['csrf']) {
-    $stmt = $bdd->prepare('SELECT count(*) FROM promos WHERE id = ?');
+if (!empty($_POST['id']) && !empty($_POST['name']) && !empty($_POST['description']) && !empty($_POST['csrf']) && $_POST['csrf'] == $_SESSION['csrf']) {
+    $stmt = $bdd->prepare('SELECT count(*) FROM events WHERE id = ?');
     $stmt->execute([$_POST['id']]);
     if ($stmt->fetch()[0] == 1) {
+
         $stmt = $bdd->prepare('UPDATE `events` SET `name` = ?, `description` = ? WHERE id = ?');
         $stmt->execute([
             $_POST['name'],
@@ -16,7 +17,7 @@ if (!empty($_POST['name']) && !empty($_POST['id']) && !empty($_POST['description
         ]);
         $_SESSION['advert'] = [
             'type' => 'success',
-            'message' => 'Evènement modifiée avec succès !'
+            'message' => 'Evènement modifié avec succès !'
         ];
         header('Location: '.WEBROOT.'../edit_event.php?id='.$_POST['id']);
         exit();

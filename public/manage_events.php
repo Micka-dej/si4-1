@@ -25,7 +25,7 @@
             ?>
 
             <div style="margin-bottom:20px;">
-                <a href="add_events.php" class="btn btn-sm btn-primary">Ajouter un évenement</a>
+                <a href="add_event.php" class="btn btn-sm btn-primary">Ajouter un évenement</a>
             </div>
 
             <div class="table-responsive">
@@ -41,8 +41,9 @@
                     <?php
                         foreach ($events as $event) {
                             echo '<tr>';
-                            echo '<td><a href="edit_events.php?id='.$event['id'].'">'.htmlentities($event['name']).'</a></td>';
-                            echo '<td><a href="edit_events.php?id='.$event['id'].'">'.htmlentities($event['description']).'</a></td>';
+                            echo '<td><a href="edit_event.php?id='.$event['id'].'">'.htmlentities($event['name']).'</a></td>';
+                            echo '<td>'.htmlentities(substr($event['description'], 0, 50)).'</td>';
+                            echo '<td><a href="edit_event.php?id='.$event['id'].'" class="btn btn-sm btn-primary">Modifier</a> <a href="do/delete_event.php?id='.$event['id'].'&csrf='.$_SESSION['csrf'].'" class="btn btn-sm btn-danger">Supprimer</a></td>';
                             echo '</tr>';
                         }
                     ?>

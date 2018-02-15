@@ -9,9 +9,10 @@ if (!empty($_POST['id']) && !empty($_POST['promo']) && !empty($_POST['csrf']) &&
     $stmt->execute([$_POST['id']]);
 
     if ($stmt->fetch()[0] == 1) {
-        $stmt = $bdd->prepare('UPDATE users SET `promoID` = ? WHERE id = ?');
+        $stmt = $bdd->prepare('UPDATE users SET `promoID` = ?, role = ? WHERE id = ?');
         $stmt->execute([
             $_POST['promo'],
+            $_POST['role'],
             $_POST['id']
         ]);
 

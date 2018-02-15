@@ -13,19 +13,21 @@
             </div>
 
             <?php
-            if (!empty($_SESSION['advert'])) {
-                $class = ($_SESSION['advert']['type'] == 'error') ? 'danger' : 'success';
-
-                echo '<div class="alert alert-'.$class.'" role="alert">' . $_SESSION['advert']['message'] . '</div>';
-
-                $_SESSION['advert'] = [];
-            }
+                if (!empty($_SESSION['advert'])) {
+                    $class = ($_SESSION['advert']['type'] == 'error') ? 'danger' : 'success';
+                    echo '<div class="alert alert-'.$class.'" role="alert">' . $_SESSION['advert']['message'] . '</div>';
+                    $_SESSION['advert'] = [];
+                }
             ?>
 
-            <form action="do/add_events.php" method="post">
-              <div class="form-group">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'évenement'">
-              </div>
+            <form action="do/add_event.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="cover">Image de couverture</label>
+                    <input type="file" class="form-control" id="cover" name="cover">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'évenement">
+                </div>
               <div class="form-group">
                 <textarea name="description" class="form-control" rows="8" cols="80" placeholder="Description de l'événement"></textarea>
               </div>
@@ -35,5 +37,5 @@
         </main>
 
 <?php
-require_once INCLUDES . '/admin/footer.php';
+    require_once INCLUDES . '/admin/footer.php';
 ?>

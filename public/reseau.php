@@ -38,7 +38,6 @@ if (!empty($_SESSION['advert'])) {
             echo '<img src="'.DIR_ASSETS.'/img/avatar.png" width="64" style="float:left;margin-right:10px;" alt="">';
             echo '<h2 class="Name">Par '.$message['user'].' le '.date('d/m/y à H:m', strtotime($message['date'])).'</h2>';
             echo '<p class="Commentaires1">'.htmlentities($message['content']).'</p>';
-            echo '<a href="#"><img class="hearth" src="<?= DIR_ASSETS; ?>/img/coeur.svg" alt=""></a>';
             echo '</div>';
         }
     ?>

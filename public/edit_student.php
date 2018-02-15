@@ -43,13 +43,16 @@ require_once DIR_MODELS . '/admin/edit_student.php';
                     ?>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="role">Rôle</label>
+                <select name="role" id="role" class="form-control">
+                    <option value="0" <?= ($user['role'] == 0) ? 'selected' : ''; ?>>Étudiant</option>
+                    <option value="1" <?= ($user['role'] == 1) ? 'selected' : ''; ?>>Administrateur</option>
+                </select>
+            </div>
             <input type="hidden" name="id" value="<?= $user['id']; ?>">
             <input type="hidden" name="csrf" value="<?= $_SESSION['csrf']; ?>">
             <button type="submit" class="btn btn-success">Enregistrer</button>
-
-            <hr>
-
-            <a href="#" class="btn btn-danger">Bannir l'utilisateur</a>
         </form>
     </main>
 

@@ -1,59 +1,43 @@
 <?php
-  require_once '../app/config/system.php';
 
-  require_once INCLUDES . '/default/header.php';
+require_once '../app/config/system.php';
+
+$page = 'events';
+$title = 'Événements';
+
+require_once INCLUDES . '/default/auth.php';
+
+require_once INCLUDES . '/default/header.php';
+
+require_once DIR_MODELS . '/default/events.php';
+
 ?>
-<body>
-
-<section class="eventBox">
-  <?php //require_once INCLUDES . '/default/sidebar.php'; ?>
-  <div class="eventBox1">
-
-    <div class="box">
-      <img class="pictures" src="img/1.png" alt="">
-      <div class="lol">
-        <p class="vd">03/03/2018 </p>
-        <p class="za">Soirée d'hiver</p>
-      </div>
-
-    </div>
-    <div class="box">
-      <img class="pictures" src="img/3.png" alt="">
-      <div class="lol">
-        <p class="zd">03/03/2018</p>
-        <p class="za">Epithanie</p>
-      </div>
-    </div>
-
-
-  </div>
-
-  <div class="eventBox2">
-
-    <div class="box">
-      <img class="pictures" src="img/2.png" alt="">
-      <div class="lol">
-        <p class="md">31/03/2018</p>
-        <p class="za">Halloween</p>
-      </div>
-    </div>
-
-
-    <div class="box">
-      <img class="pictures" src="img/4.png" alt="">
-      <div class="lol">
-        <p class="ld">03/03/2018</p>
-        <p class="za">Soirée d'intégration</p>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-</body>
-
-</html>
 
 <?php
-  require_once INCLUDES . '/default/footer.php';
+if (!empty($_SESSION['advert'])) {
+    echo '<p class="msg '.$_SESSION['advert']['type'].'" style="margin:auto;">'.$_SESSION['advert']['message'].'</p>';
+    $_SESSION['advert'] = [];
+}
+?>
+
+    <section class="container">
+
+        <?php require_once INCLUDES . '/default/sidebar.php'; ?>
+
+        <div class="container-content">
+            <?php
+                foreach ($events as $event) {
+                    echo '<div class="RectangleCommentaire" style="padding:30px;">';
+                    echo '<h2>'.htmlentities($event['name']).'</h2>';
+                    echo '<i>Le '.date('d/m/y', strtotime($event['date'])).'</i>';
+                    echo '<img src="'.DIR_ASSETS.'/img/covers/'.$event['id'].'.'.htmlentities($event['cover']).'" alt="" style="margin-top: 20px;max-width: 600px;display: block;" />';
+                    echo '<p>'.nl2br(htmlentities($event['description'])).'</p>';
+                    echo '</div>';
+                }
+            ?>
+        </div>
+    </section>
+
+<?php
+require_once INCLUDES . '/default/footer.php';
 ?>

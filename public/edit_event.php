@@ -6,6 +6,8 @@
 
     require_once INCLUDES . '/admin/header.php';
 
+    require_once DIR_MODELS . '/admin/edit_event.php';
+
 ?>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -23,13 +25,20 @@
             }
             ?>
 
-            <form action="do/edit_events.php" method="post">
-              <div class="form-group">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la filière" value="<?= htmlentities($filiere['name']); ?>">
-              </div>
-              <input type="hidden" name="id" value="<?= $filiere['id']; ?>">
-              <input type="hidden" name="csrf" value="<?= $_SESSION['csrf']; ?>">
-              <button type="submit" class="btn btn-success">Enregistrer</button>
+            <form action="do/edit_event.php" method="post">
+                <div class="form-group">
+                    <label for="cover">Image de couverture</label>
+                    <input type="file" class="form-control" id="cover" name="file">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Nom de l'évenement" value="<?= htmlentities($event['name']); ?>">
+                </div>
+                <div class="form-group">
+                    <textarea name="description" class="form-control" rows="8" cols="80" placeholder="Description de l'événement"><?= htmlentities($event['description']); ?></textarea>
+                </div>
+                <input type="hidden" name="id" value="<?= $event['id']; ?>">
+                <input type="hidden" name="csrf" value="<?= $_SESSION['csrf']; ?>">
+                <button type="submit" class="btn btn-success">Enregistrer</button>
             </form>
         </main>
 

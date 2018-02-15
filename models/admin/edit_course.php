@@ -16,5 +16,5 @@ if (!empty($_GET['id'])) {
         'message' => 'Bad id parameter'
     ];
 
-    header('Location: ');
+    header('Location: 404.php');
 }
