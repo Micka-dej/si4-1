@@ -11,21 +11,41 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['emai
 
         if (in_array($domain, $allowed)) {
             if ($_POST['password'] == $_POST['repeatpassword']) {
+                $username = $_POST['name'].' '.$_POST['firstname'];
+                $pass = password_hash($_POST['password'], PASSWORD_BCRYPT, ['cost' => 12]);
+
                 $req = $bdd->prepare('INSERT INTO `users`(`email`, `username`, `password`, `promoID`, `role`) VALUES (?, ?, ?, ?, ?)');
                 $req->execute([
                     $_POST['email'],
-                    $_POST['name'].' '.$_POST['firstname'],
+                    $username,
                     $pass,
-                    $promo,
+                    $_POST['promo'],
                     0
                 ]);
+
+                $_SESSION = [
+                    'auth' => true,
+                    'id' => $bdd->lastInsertId(),
+                    'username' => $username,
+                    'email' => $user['email'],
+                    'promoID' => $_POST['promo'],
+                    'role' => 0,
+                    'csrf' => md5(uniqid(rand(), TRUE))
+                ];
+
+                $_SESSION['advert'] = [
+                    'type' => 'success',
+                    'message' => 'Bienvenue '.$_POST['firstname'].' '.$_POST['name'] . ' !'
+                ];
+
+                header('Location: ' . WEBROOT . '../agenda.php');
             }else{
                 $_SESSION['advert'] = [
                     'type' => 'error',
                     'message' => 'Les mots de passe ne sont pas indentiques'
                 ];
 
-                header('Location: ' . WEBROOT . '../inscription.php');
+                header('Location: ' . WEBROOT . '../register.php');
             }
         } else {
             $_SESSION['advert'] = [
@@ -33,7 +53,7 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['emai
                 'message' => 'Vous devez avoir une adresse hetic.net'
             ];
 
-            header('Location: ' . WEBROOT . '../inscription.php');
+            header('Location: ' . WEBROOT . '../register.php');
         }
     }else{
         $_SESSION['advert'] = [
@@ -41,7 +61,7 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['emai
             'message' => 'Veuillez indiquer une adresse email valide'
         ];
 
-        header('Location: ' . WEBROOT . '../inscription.php');
+        header('Location: ' . WEBROOT . '../register.php');
     }
 }else{
     $_SESSION['advert'] = [
@@ -49,5 +69,5 @@ if (!empty($_POST['name']) && !empty($_POST['firstname']) && !empty($_POST['emai
         'message' => 'Vous n\'avez pas rempli tous les champs'
     ];
 
-    header('Location: ' . WEBROOT . '../inscription.php');
+    header('Location: ' . WEBROOT . '../register.php');
 }

@@ -5,6 +5,8 @@
     $title = 'Gérer les promotions';
 
     require_once INCLUDES . '/admin/header.php';
+
+    require_once DIR_MODELS . '/admin/manage_promos.php';
 ?>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -36,11 +38,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><a href="edit_promo.php?id=1">Bachelor web</a></td>
-                        <td>2020</td>
-                        <td><a href="edit_promo.php?id=1" class="btn btn-sm btn-primary">Modifier</a> <a href="delete_promo.php?id=1" class="btn btn-sm btn-danger">Supprimer</a></td>
-                    </tr>
+                    <?php
+                        foreach ($promos as $promo) {
+                            echo '<tr>';
+                            echo '<td><a href="edit_promo.php?id='.$promo['id'].'">'.$promo['filiere'].'</a></td>';
+                            echo '<td>'.$promo['year'].'</td>';
+                            echo '<td><a href="edit_promo.php?id='.$promo['id'].'" class="btn btn-sm btn-primary">Modifier</a> <a href="do/delete_promo.php?id='.$promo['id'].'&csrf='.$_SESSION['csrf'].'" class="btn btn-sm btn-danger">Supprimer</a></td>';
+                            echo '</tr>';
+                        }
+                    ?>
                     </tbody>
                 </table>
             </div>

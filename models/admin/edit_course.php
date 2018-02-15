@@ -5,9 +5,16 @@ if (!empty($_GET['id'])) {
     $stmt->execute([$_GET['id']]);
     $course = $stmt->fetch();
 
-    if (!$course) {
-        //error
+    if ($course) {
+        $stmt = $bdd->prepare('SELECT * FROM filieres');
+        $stmt->execute();
+        $filieres = $stmt->fetchAll();
     }
 }else{
-    //error
+    $_SESSION['advert'] = [
+        'type' => 'error',
+        'message' => 'Bad id parameter'
+    ];
+
+    header('Location: ');
 }

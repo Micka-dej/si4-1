@@ -2,6 +2,8 @@
 
 require_once '../../app/config/system.php';
 
+require_once '../../includes/admin/auth.php';
+
 if(!empty($_POST['name'])) {
   $req = $bdd->prepare('INSERT INTO `courses`(`name`, filiereID) VALUES (?,?)');
   $req->execute([

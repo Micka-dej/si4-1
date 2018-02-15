@@ -24,6 +24,14 @@ if (!empty($_SESSION['advert'])) {
 
     <div class="container-content">
 
+        <form action="<?= WEBROOT; ?>do/post_message.php" method="post" class="form-message">
+            <label for="message" style="color: #535353;">Votre message :</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Pour une meilleure lisibilité, écrivez avec un français correcte."></textarea>
+            <button type="submit" class="button" style="width:200px;">Publier</button>
+        </form>
+
+        <hr>
+
     <?php
         foreach ($messages as $message) {
             echo '<div class="RectangleCommentaire" style="padding:30px;">';
@@ -34,12 +42,6 @@ if (!empty($_SESSION['advert'])) {
             echo '</div>';
         }
     ?>
-
-    <form action="<?= WEBROOT; ?>do/post_message.php" method="post" class="form-message">
-        <label for="message" style="color: #535353;">Votre message :</label>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Pour une meilleure lisibilité, écrivez avec un français correcte."></textarea>
-        <button type="submit" class="button" style="width:200px;">Publier</button>
-    </form>
     </div>
 </section>
 

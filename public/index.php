@@ -29,11 +29,12 @@ require_once DIR_MODELS . '/default/home.php';
             <input type="email" name="email" placeholder="Adresse email HETIC.net">
             <input type="password" name="password" placeholder="Mot de passe">
             <button class="button" type="submit">Connexion</button>
-            <p><a href="inscription.php">Je n'ai pas de compte</a></p>
+            <p><a href="register.php">Je n'ai pas de compte</a></p>
         </form>
     </div>
     </div>
 </div>
+
 
 <?php
 

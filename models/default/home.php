@@ -1,5 +1,5 @@
 <?php
     if ($_SESSION['auth']) {
-        header('Location: feed.php');
+        header('Location: agenda.php');
     }
 ?>

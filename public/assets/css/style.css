@@ -59,7 +59,7 @@ a {
     width: 80%;
     margin: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 30px 10px;
+    padding: 30px;
     margin-top: 30px;
     background: #fff;
     display: flex;
@@ -239,7 +239,6 @@ textarea {
   margin-left: 60px;
 }
 
-<<<<<<< HEAD
 /* Events */
 
 .eventBox {
@@ -306,12 +305,6 @@ textarea {
   padding-top: 150px;
 }
 
-.container {
-  max-width: 1170px;
-  padding: 0px 20px;
-  margin: auto;
-}
-
 .containerAgenda {
   max-width: 1035px;
   min-height: 600px;
@@ -320,7 +313,6 @@ textarea {
 }
 
 /* Inscription */
-=======
 .msg {
     width: 65%;
     text-align: center;
@@ -375,4 +367,3 @@ form textarea {
         float: right;
     }
 }
->>>>>>> ed2ac9d6c04ebe62949488b4f63eb735f7c6b2c6

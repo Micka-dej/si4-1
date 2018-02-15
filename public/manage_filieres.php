@@ -43,7 +43,7 @@
                             echo '<tr>';
                             echo '<td><a href="edit_filiere.php?id='.$fil['id'].'">'.htmlentities($fil['name']).'</a></td>';
                             echo '<td>'.$fil['nb.promos'].'</td>';
-                            echo '<td><a href="edit_filiere.php?id='.$fil['id'].'" class="btn btn-sm btn-primary">Modifier</a> <a href="delete_filiere.php?id='.$fil['id'].'" class="btn btn-sm btn-danger">Supprimer</a></td>';
+                            echo '<td><a href="edit_filiere.php?id='.$fil['id'].'" class="btn btn-sm btn-primary">Modifier</a> <a href="do/delete_filiere.php?id='.$fil['id'].'&csrf='.$_SESSION['csrf'].'" class="btn btn-sm btn-danger">Supprimer</a></td>';
                             echo '</tr>';
                         }
                     ?>

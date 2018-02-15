@@ -1,6 +1,6 @@
 <?php
 
-$stmt = $bdd->prepare('SELECT * FROM filieres');
+$stmt = $bdd->prepare('SELECT * FROM filieres ORDER BY id DESC');
 $stmt->execute();
 $filieres = $stmt->fetchAll();
 

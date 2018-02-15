@@ -1,12 +1,12 @@
 <?php
 require_once '../app/config/system.php';
 
-$page = 'manage_courses';
-$title = 'Editer une matière';
+$page = 'manage_promos';
+$title = 'Ajouter une promotion';
 
 require_once INCLUDES . '/admin/header.php';
 
-require_once DIR_MODELS . '/admin/edit_course.php';
+require_once DIR_MODELS . '/admin/edit_promo.php';
 ?>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -18,27 +18,28 @@ require_once DIR_MODELS . '/admin/edit_course.php';
         if (!empty($_SESSION['advert'])) {
             $class = ($_SESSION['advert']['type'] == 'error') ? 'danger' : 'success';
 
-            echo '<div class="alert alert-'.$class.'" role="alert">' . htmlentities($_SESSION['advert']['message']) . '</div>';
+            echo '<div class="alert alert-'.$class.'" role="alert">' . $_SESSION['advert']['message'] . '</div>';
 
             $_SESSION['advert'] = [];
         }
         ?>
 
-        <form action="do/edit_course.php" method="post">
+        <form action="do/edit_promo.php" method="post">
             <div class="form-group">
-                <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la matière" value="<?= htmlentities($course['name']); ?>">
+                <label for="promo">Année de la promotion</label>
+                <input type="number" name="year" class="form-control" min="<?= date('Y')-5; ?>" max="<?= date('Y')+5; ?>" value="<?= $promo['year']; ?>">
             </div>
             <div class="form-group">
                 <label for="promo">Choisissez une filière</label>
                 <select name="filiere" id="filiere" class="form-control">
                     <?php
                     foreach ($filieres as $filiere) {
-                        echo '<option value="'.$filiere['id'].'" ' . ($course['filiereID'] == $filiere['id'] ? 'selected' : '') . '>'.$filiere['name'].'</option>';
+                        echo '<option value="'.$filiere['id'].'" ' . ($promo['filiereID'] == $filiere['id'] ? 'selected' : '') . '>'.$filiere['name'].'</option>';
                     }
                     ?>
                 </select>
             </div>
-            <input type="hidden" name="id" value="<?= $course['id']; ?>">
+            <input type="hidden" name="id" value="<?= $promo['id']; ?>">
             <input type="hidden" name="csrf" value="<?= $_SESSION['csrf']; ?>">
             <button type="submit" class="btn btn-success">Enregistrer</button>
         </form>

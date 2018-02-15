@@ -4,7 +4,7 @@ require_once '../app/config/system.php';
 
 require_once INCLUDES . '/default/header.php';
 
-require_once DIR_MODELS . '/default/home.php';
+require_once DIR_MODELS . '/default/register.php';
 
 ?>
 
@@ -31,20 +31,16 @@ require_once DIR_MODELS . '/default/home.php';
                 <input type="email" name="email" placeholder="Adresse email HETIC.net">
                 <input type="password" name="password" placeholder="Mot de place">
                 <input type="password" name="repeatpassword" placeholder="Confirmer mot de place">
-                <select name="filiere">
-                    <?php
-                        foreach ($filieres as $filiere) {
-                            echo '<option value="1">Bachelor web</option>';
-                        }
-                    ?>
-                </select>
-                <select name="promo">
-                    <?php
+                <div>
+                    <label for="promo">Choisissez une filière</label>
+                    <select name="promo" id="promo" class="form-control" style="width: 100%;border: none;padding: 10px;margin: 10px 0;">
+                        <?php
                         foreach ($promos as $promo) {
-                            echo '<option value="1">P2020</option>';
+                            echo '<option value="'.$promo['id'].'" ' . ($promo['id'] == $user['promoID'] ? 'selected' : '') . '>'.$promo['filiere'].' P'.$promo['year'].'</option>';
                         }
-                    ?>
-                </select>
+                        ?>
+                    </select>
+                </div>
                 <button class="button" type="submit">Connexion</button>
                 <p><a href="index.php">J'ai déjà un compte</a></p>
             </form>

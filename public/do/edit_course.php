@@ -1,13 +1,14 @@
 <?php
 
 require_once '../../app/config/system.php';
+
 require_once '../../includes/admin/auth.php';
 
-if(!empty($_POST['name']) && !empty($_POST['filiereID'])) {
+if(!empty($_POST['id']) && !empty($_POST['name']) && !empty($_POST['filiere']) && !empty($_POST['csrf']) && $_POST['csrf'] == $_SESSION['csrf']) {
     $req = $bdd->prepare('UPDATE `courses` SET `name` = ?, `filiereID` = ? WHERE id = ?' );
     $req->execute([
         $_POST['name'],
-        $_POST['filiereID'],
+        $_POST['filiere'],
         $_POST['id']
     ]);
 

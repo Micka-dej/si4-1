@@ -20,7 +20,7 @@
                     'csrf' => md5(uniqid(rand(), TRUE))
                 ];
 
-                header('Location: '. WEBROOT .'../feed.php');
+                header('Location: '. WEBROOT .'../agenda.php');
             }else{
                 $_SESSION['advert'] = ['type' => 'error', 'message' => 'Identifiant ou mot de passe incorrects'];
                 header('Location: '. WEBROOT .'../index.php');

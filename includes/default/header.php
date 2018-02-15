@@ -17,11 +17,6 @@
     </div>
     
     <?php if ($_SESSION['auth']): ?>
-    <div>
-        <ul class="menu">
-            <li><a href='#' class='menuLI <?= ($title == 'web') ? 'menuLI-isactive' : '' ?>'>WEB P2020</a></li>
-        </ul>
-    </div>
     
     <div class="account">
     <img src="<?= DIR_ASSETS; ?>/img/avatar.png" width="32" alt="">

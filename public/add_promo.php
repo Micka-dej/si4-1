@@ -5,6 +5,8 @@
     $title = 'Ajouter une promotion';
 
     require_once INCLUDES . '/admin/header.php';
+
+    require_once DIR_MODELS . '/admin/add_promo.php';
 ?>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
@@ -30,7 +32,11 @@
               <div class="form-group">
                 <label for="promo">Choisissez une filière</label>
                 <select name="filiere" id="filiere" class="form-control">
-                    <option value="1">Bachelor web</option>
+                    <?php
+                        foreach ($filieres as $filiere) {
+                            echo '<option value="'.$filiere['id'].'">'.$filiere['name'].'</option>';
+                        }
+                    ?>
                 </select>
               </div>
               <button type="submit" class="btn btn-success">Enregistrer</button>
