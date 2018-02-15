@@ -31,7 +31,7 @@ if (!empty($_SESSION['advert'])) {
                     <select name="course" style="width: 95%;border: none;padding: 10px;margin: 10px 0;">
                         <?php
                             foreach ($courses as $course) {
-                                echo '<option value="'.$course['id'].'">'.$course['name'].'</option>';
+                                echo '<option value="'.$course['id'].'">'.htmlentities($course['name']).'</option>';
                             }
                         ?>
                     </select>
