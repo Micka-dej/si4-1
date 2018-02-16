@@ -1,8 +1,8 @@
 <?php
 
 if (!empty($_GET['id'])) {
-    $req = $bdd->prepare('SELECT * FROM users WHERE id = ?');
-    $req->execute([$_GET['id']]);
+    $req = $bdd->prepare('SELECT * FROM users WHERE id = :id');
+    $req->execute([':id' => $_GET['id']]);
     $user = $req->fetch();
 
     $req = $bdd->prepare('SELECT * FROM promos ORDER BY id DESC');
@@ -11,7 +11,7 @@ if (!empty($_GET['id'])) {
 
     foreach ($promos as $key => $promo) {
         $req = $bdd->prepare('SELECT * FROM filieres WHERE id = ?');
-        $req->execute([$promo['filiereID']]);
+        $req->execute([':id' => $promo['filiereID']]);
         $promos[$key]['filiere'] = $req->fetch()['name'];
     }
 }else{

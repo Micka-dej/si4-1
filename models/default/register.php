@@ -9,7 +9,9 @@ $req->execute();
 $promos = $req->fetchAll();
 
 foreach ($promos as $key => $promo) {
-    $req = $bdd->prepare('SELECT * FROM filieres WHERE id = ?');
-    $req->execute([$promo['filiereID']]);
+    $req = $bdd->prepare('SELECT * FROM filieres WHERE id = :id');
+    $req->execute([
+        ':id' => $promo['filiereID']
+    ]);
     $promos[$key]['filiere'] = $req->fetch()['name'];
 }

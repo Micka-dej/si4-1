@@ -2,8 +2,8 @@
 
 
 if (!empty($_GET['id'])) {
-    $stmt = $bdd->prepare('SELECT * FROM promos WHERE id = ?');
-    $stmt->execute([$_GET['id']]);
+    $stmt = $bdd->prepare('SELECT * FROM promos WHERE id = :id');
+    $stmt->execute([':id' => $_GET['id']]);
     $promo = $stmt->fetch();
 
     if ($promo) {

@@ -5,7 +5,7 @@ $stmt->execute();
 $filieres = $stmt->fetchAll();
 
 foreach ($filieres as $key => $fil) {
-    $stmt = $bdd->prepare('SELECT count(*) FROM promos WHERE filiereID = ?');
-    $stmt->execute([$fil['id']]);
+    $stmt = $bdd->prepare('SELECT count(*) FROM promos WHERE filiereID = :id');
+    $stmt->execute([':id' => $fil['id']]);
     $filieres[$key]['nb.promos'] = $stmt->fetch()[0];
 }
